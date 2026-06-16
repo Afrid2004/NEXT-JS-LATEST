@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "First Next App",
-  description: "Our first next app",
+  title: "Dev Story",
+  description: "Our dev story app",
 };
 
 export default function RootLayout({ children }) {
@@ -23,8 +23,8 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <header className="my-3">
+      <body className="min-h-full flex flex-col gap-3 my-3">
+        <header>
           <Navbar></Navbar>
         </header>
         <main className="container">{children}</main>
