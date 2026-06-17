@@ -140,7 +140,9 @@ const StoryDetails = async ({ params }) => {
   ];
 
   const filterdStory = stories.find((story) => story.id == sid);
+  console.log(filterdStory);
   const {
+    id,
     about,
     company,
     name,
@@ -176,9 +178,12 @@ const StoryDetails = async ({ params }) => {
             </p>
           </div>
           <div className="flex items-center gap-2 flex-wrap md:flex-nowrap justify-center">
-            {skills.map((skill) => {
+            {skills.map((skill, index) => {
               return (
-                <div className="px-4 rounded-4xl bg-cyan-400/20 text-cyan-400">
+                <div
+                  key={index}
+                  className="px-4 rounded-4xl bg-cyan-400/20 text-cyan-400"
+                >
                   {skill}
                 </div>
               );
@@ -189,28 +194,28 @@ const StoryDetails = async ({ params }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="bg-gray-800 p-5 rounded-2xl">
             <div className="border-l-4 border-gray-900 rounded-xl">
-              <p className="pl-5">
-                <div className="mb-3">
+              <div className="pl-5">
+                <p className="mb-3">
                   <FaQuoteLeft size={25} />{" "}
                   <span className="text-xl mt-2 block text-cyan-400 font-bold">
                     Developer Story
                   </span>
-                </div>
+                </p>
                 {story}
-              </p>
+              </div>
             </div>
           </div>
           <div className="bg-gray-800 p-5 rounded-2xl">
             <div className="border-l-4 border-gray-900 rounded-xl">
-              <p className="pl-5">
-                <div className="mb-3">
+              <div className="pl-5">
+                <p className="mb-3">
                   <FaQuoteLeft size={25} />{" "}
                   <span className="text-xl mt-2 block text-cyan-400 font-bold">
                     About Developer
                   </span>
-                </div>
+                </p>
                 {about}
-              </p>
+              </div>
             </div>
           </div>
         </div>
