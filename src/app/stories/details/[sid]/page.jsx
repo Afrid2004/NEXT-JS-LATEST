@@ -140,7 +140,9 @@ const StoryDetails = async ({ params }) => {
   ];
 
   const filterdStory = stories.find((story) => story.id == sid);
-  console.log(filterdStory);
+  if (!filterdStory) {
+    return <h2>Story not found!</h2>;
+  }
   const {
     id,
     about,
