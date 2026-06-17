@@ -82,11 +82,11 @@ const TutorialsPage = async ({ params }) => {
                     {tech.icon}
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-center">
+                    <h2 className="text-2xl font-bold text-center mb-3">
                       {tech.name}
                     </h2>
                     <Link
-                      className="bg-white/20 text-white hover:bg-cyan-400/40 hover:text-cyan-400 px-4 py-2 rounded-4xl text-center"
+                      className="bg-white/20 text-white hover:bg-cyan-400/40 hover:text-cyan-400 px-4 py-2 rounded-4xl text-center mx-auto w-fit block"
                       href={`/tutorials/${catResult.slug}/${tech.slug}`}
                     >
                       View Details
