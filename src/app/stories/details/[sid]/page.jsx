@@ -1,8 +1,11 @@
-import StoryCard from "@/components/StoryCard";
-import Title from "@/components/Title";
 import React from "react";
+import { FaCheckCircle, FaQuoteLeft } from "react-icons/fa";
+import { MdWorkOutline } from "react-icons/md";
+import { RiUserStarLine } from "react-icons/ri";
 
-const Stories = () => {
+const StoryDetails = async ({ params }) => {
+  const { sid } = await params;
+
   const stories = [
     {
       id: 1,
@@ -135,18 +138,85 @@ const Stories = () => {
       image: "https://randomuser.me/api/portraits/men/10.jpg",
     },
   ];
+
+  const filterdStory = stories.find((story) => story.id == sid);
+  const {
+    about,
+    company,
+    name,
+    designation,
+    experience,
+    skills,
+    story,
+    image,
+  } = filterdStory;
+
   return (
-    <div className="my-5">
-      <div className="mb-5">
-        <Title>Developers Story</Title>
-      </div>
-      <div className="grid grid-cols-3 gap-5">
-        {stories.map((story) => (
-          <StoryCard key={story.id} storyData={story}></StoryCard>
-        ))}
+    <div className="my-10">
+      <div>
+        <div className="flex flex-col gap-4 justify-center items-center mb-10">
+          <div className="w-25 h-25 rounded-full p-1 overflow-hidden border-2 border-amber-400">
+            <img
+              src={image}
+              alt={name}
+              className="w-full h-full object-cover rounded-full"
+            />
+          </div>
+          <div>
+            <h1 className="text-xl flex items-center gap-2 justify-center mb-2">
+              {name} <FaCheckCircle className="text-cyan-400" size={16} />
+            </h1>
+            <p className="flex items-center gap-1 justify-center mb-2">
+              <MdWorkOutline className="text-amber-400" />
+              {designation} at {company}
+            </p>
+            <p className="flex items-center gap-1 justify-center">
+              <RiUserStarLine className="text-amber-400" />
+              {experience} of experience
+            </p>
+          </div>
+          <div className="flex items-center gap-2 flex-wrap md:flex-nowrap justify-center">
+            {skills.map((skill) => {
+              return (
+                <div className="px-4 rounded-4xl bg-cyan-400/20 text-cyan-400">
+                  {skill}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="bg-gray-800 p-5 rounded-2xl">
+            <div className="border-l-4 border-gray-900 rounded-xl">
+              <p className="pl-5">
+                <div className="mb-3">
+                  <FaQuoteLeft size={25} />{" "}
+                  <span className="text-xl mt-2 block text-cyan-400 font-bold">
+                    Developer Story
+                  </span>
+                </div>
+                {story}
+              </p>
+            </div>
+          </div>
+          <div className="bg-gray-800 p-5 rounded-2xl">
+            <div className="border-l-4 border-gray-900 rounded-xl">
+              <p className="pl-5">
+                <div className="mb-3">
+                  <FaQuoteLeft size={25} />{" "}
+                  <span className="text-xl mt-2 block text-cyan-400 font-bold">
+                    About Developer
+                  </span>
+                </div>
+                {about}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Stories;
+export default StoryDetails;
