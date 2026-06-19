@@ -1,4 +1,5 @@
 import AddToCart from "@/app/foods/AddToCart";
+import Link from "next/link";
 
 const FoodCard = ({ food }) => {
   return (
@@ -19,7 +20,15 @@ const FoodCard = ({ food }) => {
         </div>
 
         <p className="text-sm text-gray-500 mb-4">Category: {food.category}</p>
-        <AddToCart food={food}></AddToCart>
+        <div className="flex items-center gap-2">
+          <Link
+            href={`/foods/details/${food.id}`}
+            className="py-2.5 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-medium transition w-full text-center"
+          >
+            Details
+          </Link>
+          <AddToCart food={food}></AddToCart>
+        </div>
       </div>
     </div>
   );
