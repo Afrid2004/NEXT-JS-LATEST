@@ -2,7 +2,7 @@ import AddToCart from "@/app/foods/AddToCart";
 
 const FoodCard = ({ food }) => {
   return (
-    <div className="bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+    <div className="bg-gray-900 border border-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
       <div className="p-4">
         <div className="relative aspect-4/3 mb-3">
           <img

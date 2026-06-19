@@ -8,9 +8,15 @@ const CartProvider = ({ children }) => {
   const addToCart = (item) => {
     setCart([...cart, item]);
   };
+
+  const removeCart = (item) => {
+    const removedItem = cart.filter((cart) => cart.id != item.id);
+    setCart(removedItem);
+  };
   const cartInfo = {
     cart,
     addToCart,
+    removeCart,
   };
   return <CartContext value={cartInfo}>{children}</CartContext>;
 };

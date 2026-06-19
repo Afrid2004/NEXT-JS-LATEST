@@ -17,7 +17,7 @@ const SearchFood = () => {
   return (
     <div>
       <form onSubmit={handleForm}>
-        <div className="flex items-center gap-2 bg-gray-800 h-9 w-full rounded-sm overflow-hidden">
+        <div className="flex items-center gap-2 bg-gray-900 border border-gray-800 h-9 w-full rounded-sm overflow-hidden">
           <input
             type="text"
             name="search"

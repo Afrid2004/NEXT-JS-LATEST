@@ -77,7 +77,10 @@ const TutorialsPage = async ({ params }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {catResult.technologies.map((tech, index) => {
               return (
-                <div key={index} className="bg-gray-800 rounded-2xl p-5">
+                <div
+                  key={index}
+                  className="bg-gray-900 border border-gray-800 rounded-2xl p-5"
+                >
                   <div className="mb-5 w-17 h-17 rounded-full bg-cyan-400/20 text-cyan-400 flex items-center justify-center mx-auto">
                     {tech.icon}
                   </div>

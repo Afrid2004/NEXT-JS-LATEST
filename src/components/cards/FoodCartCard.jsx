@@ -1,6 +1,13 @@
 "use client";
 
+import { CartContext } from "@/context/CartProvider";
+import { use } from "react";
+
 const FoodCartCard = ({ cart }) => {
+  const { removeCart } = use(CartContext);
+  const handleDelete = () => {
+    removeCart(cart);
+  };
   return (
     <div className="bg-gray-800 text-white rounded-xl shadow-md overflow-hidden w-full max-w-sm">
       <div className="p-4 space-y-2">
@@ -20,7 +27,10 @@ const FoodCartCard = ({ cart }) => {
         </div>
 
         <div className="flex gap-2 items-center">
-          <button className="w-full py-2 rounded-lg bg-red-600 hover:bg-red-700 transition">
+          <button
+            onClick={() => handleDelete()}
+            className="w-full py-2 rounded-lg bg-red-600 hover:bg-red-700 transition"
+          >
             Delete
           </button>
 

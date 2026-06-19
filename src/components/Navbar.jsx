@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="container">
-        <div className="flex items-center justify-between bg-gray-800 px-4 py-3 rounded-xl">
+        <div className="flex items-center justify-between bg-gray-900 border border-gray-800 px-4 py-3 rounded-xl">
           <Link href="/" className="uppercase">
             <Title>👨‍💻 Dev Story</Title>
           </Link>

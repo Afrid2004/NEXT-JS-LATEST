@@ -2,6 +2,7 @@ import FoodCard from "@/components/cards/FoodCard";
 import React from "react";
 import Cart from "./Cart";
 import SearchFood from "./SearchFood";
+import Link from "next/link";
 
 // server side rendering (ssr rendering)
 const getAllFoods = async (search) => {
@@ -23,7 +24,15 @@ const FoodCorner = async ({ searchParams }) => {
   return (
     <div className="my-5">
       <div>
-        <h1 className="text-3xl font-bold mb-5">Food Corner</h1>
+        <div className="mb-5 flex items-center justify-between">
+          <h1 className="text-3xl font-bold">Food Corner</h1>
+          <Link
+            className="bg-white/20 text-white hover:bg-cyan-400/40 hover:text-cyan-400 px-4 py-2 rounded-4xl text-center"
+            href="../reviews"
+          >
+            Food Reviews
+          </Link>
+        </div>
         <div>
           <div className="grid grid-cols-12 gap-5">
             <div className="col-span-9">

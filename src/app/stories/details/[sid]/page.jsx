@@ -194,8 +194,8 @@ const StoryDetails = async ({ params }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div className="bg-gray-800 p-5 rounded-2xl">
-            <div className="border-l-4 border-gray-900 rounded-xl">
+          <div className="bg-gray-900 border border-gray-800 p-5 rounded-2xl">
+            <div className="border-l-4 border-gray-800 rounded-xl">
               <div className="pl-5">
                 <p className="mb-3">
                   <FaQuoteLeft size={25} />{" "}
@@ -207,8 +207,8 @@ const StoryDetails = async ({ params }) => {
               </div>
             </div>
           </div>
-          <div className="bg-gray-800 p-5 rounded-2xl">
-            <div className="border-l-4 border-gray-900 rounded-xl">
+          <div className="bg-gray-900 border border-gray-800 p-5 rounded-2xl">
+            <div className="border-l-4 border-gray-800 rounded-xl">
               <div className="pl-5">
                 <p className="mb-3">
                   <FaQuoteLeft size={25} />{" "}

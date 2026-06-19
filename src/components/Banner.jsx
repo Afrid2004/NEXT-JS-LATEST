@@ -13,7 +13,7 @@ const Banner = () => {
   };
   return (
     <div>
-      <div className="h-100 p-5 bg-gray-800 rounded-xl flex items-center justify-center">
+      <div className="h-100 p-5 bg-gray-900 border border-gray-800 rounded-xl flex items-center justify-center">
         <div className="flex items-center justify-center flex-col gap-10">
           <h2 className="text-5xl font-bold uppercase">
             Wellcome to Dev Story
