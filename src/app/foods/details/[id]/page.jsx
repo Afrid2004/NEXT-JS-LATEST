@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -48,10 +49,11 @@ const FoodDetails = async ({ params }) => {
         <div className="grid grid-cols-2 gap-5 bg-gray-900 border border-gray-800 p-5 rounded-2xl">
           {/* Image */}
           <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
-            <img
+            <Image
               src={food.foodImg}
               alt={food.title}
-              fill
+              width={240}
+              height={240}
               className="object-cover w-full"
             />
           </div>

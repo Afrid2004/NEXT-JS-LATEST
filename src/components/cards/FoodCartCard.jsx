@@ -1,6 +1,7 @@
 "use client";
 
 import { CartContext } from "@/context/CartProvider";
+import Image from "next/image";
 import { use } from "react";
 
 const FoodCartCard = ({ cart }) => {
@@ -13,9 +14,11 @@ const FoodCartCard = ({ cart }) => {
       <div className="p-4 space-y-2">
         <div className="flex gap-3 mb-3">
           <div className="relative w-20 h-20 shrink-0">
-            <img
+            <Image
               src={cart.foodImg}
               alt={cart.title}
+              width={80}
+              height={80}
               className="object-cover w-full h-full rounded-lg"
             />
           </div>

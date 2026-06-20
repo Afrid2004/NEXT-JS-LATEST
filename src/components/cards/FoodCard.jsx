@@ -1,4 +1,5 @@
 import AddToCart from "@/app/foods/AddToCart";
+import Image from "next/image";
 import Link from "next/link";
 
 const FoodCard = ({ food }) => {
@@ -6,9 +7,11 @@ const FoodCard = ({ food }) => {
     <div className="bg-gray-900 border border-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
       <div className="p-4">
         <div className="relative aspect-4/3 mb-3">
-          <img
+          <Image
             src={food.foodImg}
             alt={food.title}
+            width={120}
+            height={120}
             className="object-cover w-full rounded-lg"
           />
         </div>

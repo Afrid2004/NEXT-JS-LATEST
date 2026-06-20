@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { FaCheckCircle, FaQuoteLeft } from "react-icons/fa";
 import { MdWorkOutline } from "react-icons/md";
@@ -160,10 +161,12 @@ const StoryDetails = async ({ params }) => {
       <div>
         <div className="flex flex-col gap-4 justify-center items-center mb-10">
           <div className="w-25 h-25 rounded-full p-1 overflow-hidden border-2 border-amber-400">
-            <img
+            <Image
               src={image}
               alt={name}
               className="w-full h-full object-cover rounded-full"
+              width={100}
+              height={100}
             />
           </div>
           <div>

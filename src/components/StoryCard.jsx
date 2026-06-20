@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
@@ -10,9 +11,11 @@ const StoryCard = ({ storyData }) => {
       <div className="bg-gray-900 border border-gray-800 p-5 rounded-2xl">
         <div className="flex flex-col gap-4 justify-center items-center ">
           <div className="w-20 h-20 rounded-full p-1 overflow-hidden border-2 border-amber-400">
-            <img
+            <Image
               src={image}
               alt={name}
+              width={80}
+              height={80}
               className="w-full h-full object-cover rounded-full"
             />
           </div>

@@ -1,12 +1,15 @@
+import Image from "next/image";
+
 const ReviewCard = ({ review }) => {
   return (
     <div className="bg-gray-900 rounded-xl p-5 shadow-md border border-gray-800">
       <div className="flex items-center gap-3 mb-4">
         <div className="relative w-12 h-12">
-          <img
+          <Image
             src={review.photo}
             alt={review.user}
-            fill
+            width={48}
+            height={48}
             className="rounded-full object-cover"
           />
         </div>
