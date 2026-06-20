@@ -1,6 +1,36 @@
 import Link from "next/link";
 import React from "react";
 
+// static site generation (SSG)
+export function generateStaticParams() {
+  return [{ id: "52923" }, { id: "52902" }, { id: "53028" }];
+}
+
+//generate dynamic metadata
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const food = await getFoodDetails(id);
+
+  return {
+    title: food.title,
+    keywords: ["Next.js", "React", "JavaScript"],
+    authors: [{ name: "Afrid", url: "https://faisalafrid.vercel.app" }],
+    openGraph: {
+      title: food.title,
+      description: "Our dev story app",
+      url: "https://my-next-js-latest.vercel.app/",
+      siteName: "Dev Story",
+      images: [
+        {
+          url: food.foodImg,
+          width: 800,
+          height: 600,
+        },
+      ],
+    },
+  };
+}
+
 const getFoodDetails = async (id) => {
   const res = await fetch(
     `https://taxi-kitchen-api.vercel.app/api/v1/foods/${id}`,

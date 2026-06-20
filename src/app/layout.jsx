@@ -14,7 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Dev Story",
+  title: {
+    default: "Dev Story",
+    template: "%s | Dev Story",
+  },
   description: "Our dev story app",
 };
 
