@@ -1,5 +1,6 @@
 import { connect } from "@/lib/db_config";
 import { ObjectId } from "mongodb";
+import { revalidatePath } from "next/cache";
 
 const feedbackCollection = connect("feedbacks");
 

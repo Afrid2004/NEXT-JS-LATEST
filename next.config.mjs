@@ -19,6 +19,16 @@ const nextConfig = {
       },
     ],
   },
+  /*suppose few days age we have a page called foods/food-details now we move this page contents to foods/details so it will automaticlly redirect user to the new page*/
+  async redirects() {
+    return [
+      {
+        source: "/foods/food-details/:id",
+        destination: "/foods/details/:id",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

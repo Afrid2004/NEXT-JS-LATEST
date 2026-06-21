@@ -1,4 +1,5 @@
 import { connect } from "@/lib/db_config";
+import { revalidatePath } from "next/cache";
 
 const feedbackCollection = connect("feedbacks");
 
@@ -11,7 +12,9 @@ export async function GET(request) {
 //post feedback data
 export async function POST(request) {
   // work like request.body
-  const { message } = await request.json();
+  const body = await request.json();
+
+  const message = body.message;
 
   if (!message || typeof message !== "string") {
     return Response.json({
@@ -23,23 +26,7 @@ export async function POST(request) {
   const newMessage = { message, date: new Date() };
 
   const result = await feedbackCollection.insertOne(newMessage);
+  // refresh
+  revalidatePath("/feedbacks");
   return Response.json(result);
 }
-
-//update feedback data
-// export async function POST(request) {
-//   // work like request.body
-//   const { message } = await request.json();
-
-//   if (!message || typeof message !== "string") {
-//     return Response.json({
-//       status: 400,
-//       message: "Please enter a message!",
-//     });
-//   }
-
-//   const newMessage = { message, date: new Date() };
-
-//   const result = await feedbackCollection.insertOne(newMessage);
-//   return Response.json(result);
-// }
